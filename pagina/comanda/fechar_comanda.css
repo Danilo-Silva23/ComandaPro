@@ -1,0 +1,222 @@
+/* Reset estilo de lista */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+nav {
+    position: fixed; /* Fixando o menu no topo */
+    width: 100%; /* Garantir que o menu ocupe a largura total */
+    height: 80px; /* Ajuste a altura conforme necessário */
+    left: 0;
+    top: 0;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para o menu */
+}
+
+/* Logo */
+nav .logo img {
+    height: 60px; /* Tamanho da logo */
+}
+
+/* Estilos para os links de navegação */
+nav ul {
+    display: flex; /* Coloca os itens lado a lado */
+    gap: 20px; /* Espaçamento entre os itens */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block; /* Itens lado a lado */
+}
+
+nav ul li a {
+    color: black; /* Cor preta para os links */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 16px; /* Tamanho da fonte */
+    padding: 10px 15px;
+    margin-right: 20px;
+}
+
+nav ul li a:hover {
+    color: #333333; /* Mudança de cor ao passar o mouse */
+}
+
+/* Botão de Login e Sair */
+nav ul li .login, 
+nav ul li .logout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    margin-right: 40px;
+    gap: 8px;
+    width: 70px; /* Reduzindo o tamanho do botão */
+    height: 35px; /* Reduzindo a altura do botão */
+    background: #000000;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+nav ul li .login:hover, 
+nav ul li .logout:hover {
+    background-color: #333333;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Conteúdo */
+.container {
+    max-width: 600px;
+    margin: 120px auto 50px; /* Ajusta a margem superior para evitar sobreposição pelo menu fixo */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicionando sombra à div container */
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: black; /* Cor preta para o título */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+input[type="submit"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: black; /* Cor de fundo preta para o botão */
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+}
+
+input[type="submit"]:hover {
+    background-color: #333333; /* Cor de fundo preta mais escura ao passar o mouse */
+}
+
+a.voltar {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: black; /* Cor de fundo preta para o link */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    width: 20%;
+}
+
+a.voltar:hover {
+    background-color: #333333; /* Cor de fundo preta mais escura ao passar o mouse */
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+    nav {
+        padding: 10px 5%;
+        height: 80px;
+    }
+    nav .logo img {
+        height: 50px; /* Reduzir logo em telas médias */
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Ajustar o tamanho da fonte dos links */
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 5%;
+    }
+
+    nav ul {
+        display: none; /* Oculta o menu por padrão */
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        position: absolute; /* Posiciona o menu sobre o conteúdo */
+        top: 80px; /* Ajusta para que o menu apareça abaixo do nav */
+        left: 0;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para o menu */
+    }
+
+    nav ul.show {
+        display: flex; /* Exibe o menu quando ativado */
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+    input[type="submit"] {
+        background-color: black; /* Cor de fundo preta para o botão */
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 40%;
+    }
+    a.voltar {
+        display: inline-block;
+        margin-top: 15%;
+        padding: 10px;
+        background-color: black; /* Cor de fundo preta para o link */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        width: 40%;
+    }
+}
